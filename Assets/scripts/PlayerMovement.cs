@@ -27,4 +27,13 @@ public class PlayerController : MonoBehaviour
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
         transform.position += new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed * Time.deltaTime;
     }
+
+    void OnEnable()
+    {
+        moveAction.Enable();
+    }
+    void OnDisable()
+    {
+        moveAction.Disable();
+    }
 }
